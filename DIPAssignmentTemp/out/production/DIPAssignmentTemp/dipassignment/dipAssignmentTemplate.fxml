@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="root_layout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dipassignment.DipAssignmentTemplateController">
+   <top>
+      <MenuBar fx:id="menu_bar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menu_import" mnemonicParsing="false" onAction="#doImportImageFromComputer" text="Import" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Baisc">
+            <items>
+              <MenuItem fx:id="menu_rotate_left" mnemonicParsing="false" onAction="#doImageRotateLeft" text="Rotate Left" />
+                  <MenuItem fx:id="menu_rotate_right" mnemonicParsing="false" onAction="#doImageRotateRight" text="Rotate Right" />
+                  <MenuItem fx:id="menu_full_rotate" mnemonicParsing="false" onAction="#doImageFullRotate" text="Full Rotate" />
+                <MenuItem fx:id="menu_RGBToGra_Conversion" mnemonicParsing="false" onAction="#RGBToGraConversion" text="RGB To Gray" />
+
+
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Histogram">
+            <items>
+              <MenuItem fx:id="menu_histogram_chart" mnemonicParsing="false" onAction="#doHistogramChart" text="Histogram Chart" />
+                <MenuItem fx:id="menu_Histogram_Equalization" mnemonicParsing="false" onAction="#doHistoGramEqualization" text="Histogram Equalization" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Thresholding">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#doBGT" text="BGT" />
+                  <MenuItem mnemonicParsing="false" onAction="#doOtsusMethod" text="Otsu`s Method" />
+
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Filtering">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#doMeanFiltering" text="Mean Filter" />
+                  <MenuItem mnemonicParsing="false" onAction="#doGaussianFiltering" text="Gaussian Filter" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <GridPane gridLinesVisible="true" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="imported_imageview" fitHeight="370.0" fitWidth="300.0" pickOnBounds="true" smooth="false" />
+            <ImageView fx:id="output_imageview" fitHeight="370.0" fitWidth="300.0" pickOnBounds="true" smooth="false" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
