@@ -1,7 +1,7 @@
 # Image-Processing
 
 Overview :
-This project which is developed by using java, image processing concept and basic mathematical formula.
+This project is developed by using java, image processing concept and basic mathematical formula.
 
 Basic :
 
